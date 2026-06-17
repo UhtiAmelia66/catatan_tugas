@@ -30,10 +30,12 @@
         }
 
         h1{
-            text-align:center;
-            color:#ff69b4;
-            margin-bottom:25px;
-        }
+        text-align:center;
+        color:#ff69b4;
+        font-size:32px;
+        font-weight:800;
+        margin-bottom:25px;
+}
 
         label{
             display:block;
@@ -65,30 +67,42 @@
         }
 
         .btn{
-            width:100%;
-            margin-top:25px;
-            padding:14px;
-            border:none;
-            border-radius:12px;
-            background:#ff69b4;
-            color:white;
-            font-size:16px;
-            cursor:pointer;
-            transition:.3s;
-        }
+        width:100%;
+        margin-top:25px;
+        padding:14px;
+        border:none;
+        border-radius:15px;
+        background:linear-gradient(135deg,#ff9ecf,#ff69b4);
+        color:white;
+        font-size:16px;
+        font-weight:bold;
+        cursor:pointer;
+        transition:.3s;
+        box-shadow:0 5px 15px rgba(255,105,180,.3);
+}
+
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:linear-gradient(135deg,#ff69b4,#ff4f9a);
+}
 
         .btn:hover{
             background:#ff4f9a;
         }
 
-        .back{
-            display:block;
-            text-align:center;
-            margin-top:15px;
-            text-decoration:none;
-            color:#ff69b4;
-            font-weight:bold;
-        }
+            .back{
+        display:block;
+        text-align:center;
+        margin-top:20px;
+        text-decoration:none;
+        color:#ff69b4;
+        font-weight:bold;
+    }
+
+.back:hover{
+    color:#ff4f9a;
+}
 
     </style>
 

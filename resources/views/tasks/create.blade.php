@@ -22,18 +22,34 @@
             margin:auto;
         }
 
-        .card{
-            background:white;
-            padding:35px;
-            border-radius:25px;
-            box-shadow:0 10px 25px rgba(255,182,193,.4);
+            .card{
+        background:white;
+        padding:35px;
+        border-radius:25px;
+        box-shadow:0 10px 25px rgba(255,182,193,.4);
+        animation: muncul .5s ease;
+    }
+
+
+    @keyframes muncul{
+
+        from{
+            opacity:0;
+            transform:translateY(20px);
         }
 
-        h1{
-            text-align:center;
-            color:#ff69b4;
-            margin-bottom:25px;
+        to{
+            opacity:1;
+            transform:translateY(0);
         }
+
+    }
+
+            h1{
+        text-align:center;
+        color:#ff69b4;
+        margin-bottom:25px;
+    }
 
         label{
             font-weight:600;
@@ -63,7 +79,7 @@
             height:120px;
         }
 
-        .btn{
+                .btn{
             width:100%;
             padding:14px;
             margin-top:20px;

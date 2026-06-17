@@ -39,49 +39,30 @@ color:white;
 
 
 .tambah{
-
-background:#00c853;
-
-color:white;
-
-padding:12px 20px;
-
-border-radius:10px;
-
-text-decoration:none;
-
+    background:#ff4fa3;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    display:inline-block;
 }
-
-
-
-.card{
-
-background:white;
-
-margin-top:20px;
-
-padding:25px;
-
-border-radius:20px;
-
-box-shadow:0 10px 20px rgba(0,0,0,.2);
-
-}
-
-
 
 .edit{
+    background:#ff7ac3;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    text-decoration:none;
+    display:inline-block;
+}
 
-background:#2196f3;
-
-color:white;
-
-padding:8px;
-
-border-radius:8px;
-
-text-decoration:none;
-
+.hapus{
+    background:#ff2e63;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 
@@ -120,10 +101,8 @@ border-radius:8px;
 
 
 
-<a class="tambah" href="/tasks/create">
-
-+ Tambah Tugas
-
+<a href="/tasks/create" class="btn tambah">
+    + Tambah Tugas
 </a>
 
 
@@ -170,10 +149,8 @@ Status:
 
 
 
-<a class="edit" href="/tasks/{{ $task->id }}/edit">
-
-Edit
-
+<a href="/tasks/{{ $task->id }}/edit" class="btn edit">
+    Edit
 </a>
 
 
@@ -187,10 +164,8 @@ Edit
 @method('DELETE')
 
 
-<button>
-
-Hapus
-
+<button class="btn hapus">
+    Hapus
 </button>
 
 
