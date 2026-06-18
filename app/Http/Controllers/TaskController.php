@@ -2,37 +2,98 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class TaskController extends Controller
 {
-    public function index()
-    {
-        return 'Laravel berhasil berjalan';
-    }
+
+   public function index()
+{
+    $tasks = Task::all();
+
+    return view('tasks.index', compact('tasks'));
+}
+
 
     public function create()
     {
-        return 'Halaman Create';
+        return view('tasks.create');
     }
+
 
     public function store(Request $request)
     {
-        return 'Store berhasil';
+
+        $request->validate([
+            'judul'=>'required',
+            'deskripsi'=>'required',
+            'deadline'=>'required',
+            'status'=>'required'
+        ]);
+
+
+        Task::create([
+            'judul'=>$request->judul,
+            'deskripsi'=>$request->deskripsi,
+            'deadline'=>$request->deadline,
+            'status'=>$request->status
+        ]);
+
+
+        return redirect('/tasks')
+        ->with('success','Tugas berhasil ditambahkan');
+
     }
 
-    public function edit($id)
+
+
+    public function edit(Task $task)
     {
-        return 'Edit produk ID: ' . $id;
+        return view('tasks.edit', compact('task'));
     }
 
-    public function update(Request $request, $id)
+
+
+    public function update(Request $request, Task $task)
     {
-        return 'Update produk ID: ' . $id;
+
+
+        $request->validate([
+            'judul'=>'required',
+            'deskripsi'=>'required',
+            'deadline'=>'required',
+            'status'=>'required'
+        ]);
+
+
+
+        $task->update([
+
+            'judul'=>$request->judul,
+            'deskripsi'=>$request->deskripsi,
+            'deadline'=>$request->deadline,
+            'status'=>$request->status
+
+        ]);
+
+
+        return redirect('/tasks')
+        ->with('success','Tugas berhasil diperbarui');
+
     }
 
-    public function destroy($id)
+
+
+    public function destroy(Task $task)
     {
-        return 'Hapus produk ID: ' . $id;
+
+        $task->delete();
+
+
+        return redirect('/tasks')
+        ->with('success','Tugas berhasil dihapus');
+
     }
+
 }
