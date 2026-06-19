@@ -1,7 +1,1 @@
-{
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "echo 'no build'"
-  }
-}
+{}
