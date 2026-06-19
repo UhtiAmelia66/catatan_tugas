@@ -12,8 +12,8 @@ class TaskController extends Controller
 {
     $tasks = Task::all();
 
-     return 'Laravel berhasil berjalan';
-    }
+    return view('tasks.index', compact('tasks'));
+}
 
 
     public function create()
